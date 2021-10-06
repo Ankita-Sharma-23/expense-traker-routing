@@ -1,25 +1,26 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import { Balance } from "../Components/Balance";
+import { Header } from "../Components/Header";
 import { History } from "../Components/History";
+import { Income } from "../Components/Income";
+import { NewTransaction } from "../Components/NewTransaction";
 
-interface Props {
-  productItems: any;
-  cartItems: any;
-  handleChange: any;
-  handleDelete: any;
-  searchItem: any;
-  jupitorInfo: any;
-}
-export const Routes: React.FC<Props> = () => {
+export const Routes = () => {
   return (
     <div>
       <Switch>
-        <Route path="/" exact>
+        <Route path="/Balance">
          <Balance/>
         </Route>
-        <Route path="/cart" exact>
+        <Route path="/History" >
           <History/>
+        </Route>
+        <Route path="/Income">
+          <Income/>
+        </Route>
+        <Route path="/NewTransation">
+        <NewTransaction/> 
         </Route>
       </Switch>
     </div>

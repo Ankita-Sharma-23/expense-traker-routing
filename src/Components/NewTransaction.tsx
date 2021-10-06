@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { GlobalContext } from "../Context API/Context";
 
 export const NewTransaction = () => {
-  const [input, setInput] = useState<string>("");
+  const [text, setText] = useState<string>("");
   const [amount, setAmount] = useState<any>(0);
 
 
@@ -13,7 +13,7 @@ export const NewTransaction = () => {
   const onSubmit=(e: { preventDefault: () => void; })=>{
     e.preventDefault();
     const newValue={
-      id: new Date().getTime().toString() ,input ,amount
+      id: new Date().getTime().toString() ,text ,amount
     }
     editHandle(newValue);
     console.log("oooooo",newValue)
@@ -31,8 +31,8 @@ export const NewTransaction = () => {
             className="input"
             type="text"
             placeholder="Enter text..."
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
+            value={text}
+            onChange={(e) => setText(e.target.value)}
           />
         </div>
         <div className="transaction">

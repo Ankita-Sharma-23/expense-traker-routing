@@ -15,7 +15,7 @@ export const History = () => {
             key={context.options.id}
             className={context.options.amount < 0 ? "minus" : "plus"}
           >
-            {event.input}
+            {event.text}
             <span>
               {sign}${event.amount}
             </span>
