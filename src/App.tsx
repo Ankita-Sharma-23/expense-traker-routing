@@ -1,26 +1,33 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import { Balance } from './Components/Balance';
+import { Header } from './Components/Header';
+import { History } from './Components/History';
+import { Income } from './Components/Income';
+import { NewTransaction } from './Components/NewTransaction';
+import { GlobalProvider } from './Context API/Context';
+import './Style/style.css'
+import './Style/income.css'
+import './Style/history.css'
+import { BrowserRouter as Router } from 'react-router-dom'
+import { Routes } from "./Routes/Routes";
+    
 function App() {
   return (
+    <GlobalProvider>
+  
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header/> 
+      <div className="container">
+      <Router>
+        <Balance/>
+        <Income/>
+        <History/>
+        <NewTransaction/>
+        </Router>
+      </div>
     </div>
+    </GlobalProvider>
   );
 }
-
+    
 export default App;
